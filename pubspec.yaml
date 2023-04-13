@@ -1,5 +1,5 @@
 name: parkade
-description: A Very Good Project created by Very Good CLI.
+description: Parkade
 version: 1.0.0+1
 publish_to: none
 
@@ -8,12 +8,15 @@ environment:
 
 dependencies:
   bloc: ^8.1.1
+  cupertino_icons:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.2
   flutter_localizations:
     sdk: flutter
+  handy_extensions:
   intl: ^0.17.0
+  relative_scale: 
 
 dev_dependencies:
   bloc_test: ^9.1.1
@@ -25,3 +28,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
