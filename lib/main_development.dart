@@ -1,6 +1,6 @@
-import 'package:parkade/app/app.dart';
-import 'package:parkade/bootstrap.dart';
+import 'bootstrap.dart';
+import 'parkade/views/pages/parkade.dart';
 
 void main() {
-  bootstrap(() => const App());
+  bootstrap(() => const ParkadeApp());
 }
