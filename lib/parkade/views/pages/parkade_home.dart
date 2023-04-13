@@ -6,15 +6,16 @@
 //  Copyright (c) 2023 ModestNerds, Co
 //
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:handy_extensions/handy_extensions.dart';
 import 'package:relative_scale/relative_scale.dart';
 
 import '../../../core/colors.dart';
 import '../widgets/greeting_text_container.dart';
+import '../widgets/parking_ticket.dart';
+import '../widgets/parking_ticket_barcode.dart';
 import '../widgets/search_text_field.dart';
-import '../widgets/service_widget.dart';
+import '../widgets/services_section.dart';
 
 class ParkadeHome extends StatelessWidget {
   const ParkadeHome({super.key});
@@ -38,8 +39,8 @@ class ParkadeHome extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               stops: [
-                0.5,
-                0.5,
+                0.7,
+                0.3,
               ],
             ),
           ),
@@ -51,11 +52,11 @@ class ParkadeHome extends StatelessWidget {
                 ),
                 const GreetingTextContainer(),
                 SizedBox(
-                  height: sy(20),
+                  height: sy(15),
                 ),
                 const SearchTextField(),
                 SizedBox(
-                  height: sy(20),
+                  height: sy(15),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -93,28 +94,12 @@ class ParkadeHome extends StatelessWidget {
                 SizedBox(
                   height: sy(10),
                 ),
-                Row(
-                  children: [
-                    const ServiceWidget(
-                      text: 'Find a\nparking',
-                      icon: Icons.local_parking_sharp,
-                    ),
-                    SizedBox(
-                      width: sx(15),
-                    ),
-                    const ServiceWidget(
-                      text: 'Place\nlocation',
-                      icon: CupertinoIcons.location_circle,
-                    ),
-                    SizedBox(
-                      width: sx(15),
-                    ),
-                    const ServiceWidget(
-                      text: 'Car\nSecurity',
-                      icon: CupertinoIcons.checkmark_shield,
-                    ),
-                  ],
+                const ServicesSection(),
+                SizedBox(
+                  height: sy(20),
                 ),
+                const ParkingTicket(),
+                const ParkingTicketBarcode(),
               ],
             ),
           ),

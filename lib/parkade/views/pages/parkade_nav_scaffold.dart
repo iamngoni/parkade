@@ -59,7 +59,7 @@ class _ParkadeNavScaffoldState extends State<ParkadeNavScaffold> {
             height: height,
             width: width,
             child: PageView(
-              children: [
+              children: const [
                 ParkadeHome(),
                 ParkadeMap(),
                 ParkadeBookings(),
