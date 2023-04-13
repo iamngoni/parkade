@@ -8,11 +8,23 @@
 
 import 'package:flutter/material.dart';
 
+import '../../../core/colors.dart';
+
 class ParkadeBookings extends StatelessWidget {
   const ParkadeBookings({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      color: ParkadeColors.navyBlue,
+      child: const Center(
+        child: Text(
+          'Bookings',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
   }
 }

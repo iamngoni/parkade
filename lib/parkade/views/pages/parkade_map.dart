@@ -8,11 +8,23 @@
 
 import 'package:flutter/material.dart';
 
+import '../../../core/colors.dart';
+
 class ParkadeMap extends StatelessWidget {
   const ParkadeMap({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      color: ParkadeColors.navyBlue,
+      child: const Center(
+        child: Text(
+          'Map',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
   }
 }

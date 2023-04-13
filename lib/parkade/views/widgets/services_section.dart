@@ -8,8 +8,10 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:handy_extensions/handy_extensions.dart';
 import 'package:relative_scale/relative_scale.dart';
 
+import '../../../parkade_slot_selection/views/pages/parkade_slot_selection.dart';
 import 'service_widget.dart';
 
 class ServicesSection extends StatelessWidget {
@@ -23,9 +25,14 @@ class ServicesSection extends StatelessWidget {
       builder: (context, height, width, sy, sx) {
         return Row(
           children: [
-            const ServiceWidget(
+            ServiceWidget(
               text: 'Find a\nparking',
               icon: Icons.local_parking_sharp,
+              onTap: () {
+                context.goTo(
+                  page: const ParkadeSlotSelectionPage(),
+                );
+              },
             ),
             SizedBox(
               width: sx(15),

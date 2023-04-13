@@ -25,6 +25,7 @@ class ParkadeNavScaffold extends StatefulWidget {
 }
 
 class _ParkadeNavScaffoldState extends State<ParkadeNavScaffold> {
+  final PageController _pageController = PageController();
   int _index = 0;
 
   final List<Map<String, dynamic>> _pages = [
@@ -59,6 +60,8 @@ class _ParkadeNavScaffoldState extends State<ParkadeNavScaffold> {
             height: height,
             width: width,
             child: PageView(
+              controller: _pageController,
+              physics: const NeverScrollableScrollPhysics(),
               children: const [
                 ParkadeHome(),
                 ParkadeMap(),
@@ -87,9 +90,12 @@ class _ParkadeNavScaffoldState extends State<ParkadeNavScaffold> {
                     .map(
                       (e) => _pages.indexOf(e) == _index
                           ? GestureDetector(
-                              onTap: () => setState(() {
-                                _index = _pages.indexOf(e);
-                              }),
+                              onTap: () {
+                                setState(() {
+                                  _index = _pages.indexOf(e);
+                                });
+                                _pageController.jumpToPage(_index);
+                              },
                               child: Container(
                                 height: context.height,
                                 padding: EdgeInsets.symmetric(
@@ -130,9 +136,12 @@ class _ParkadeNavScaffoldState extends State<ParkadeNavScaffold> {
                             )
                           : Expanded(
                               child: GestureDetector(
-                                onTap: () => setState(() {
-                                  _index = _pages.indexOf(e);
-                                }),
+                                onTap: () {
+                                  setState(() {
+                                    _index = _pages.indexOf(e);
+                                  });
+                                  _pageController.jumpToPage(_index);
+                                },
                                 child: e['type'] == String
                                     ? ImageIcon(
                                         AssetImage(e['icon'] as String),
