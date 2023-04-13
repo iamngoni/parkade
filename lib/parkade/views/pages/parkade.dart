@@ -15,9 +15,12 @@ class ParkadeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Parkade',
-      home: ParkadeNavScaffold(),
+      theme: ThemeData(
+        fontFamily: 'PublicSans',
+      ),
+      home: const ParkadeNavScaffold(),
     );
   }
 }

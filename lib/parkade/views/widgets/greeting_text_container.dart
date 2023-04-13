@@ -51,7 +51,7 @@ class GreetingTextContainer extends StatelessWidget {
                 Text(
                   '$_greeting, Ngoni!',
                   style: TextStyle(
-                    color: Colors.black,
+                    color: ParkadeColors.navyBlue,
                     fontWeight: FontWeight.w700,
                     fontSize: sy(10),
                   ),
