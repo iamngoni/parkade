@@ -8,7 +8,7 @@ environment:
 
 dependencies:
   barcode_widget: ^2.0.3
-  bloc: ^8.1.1
+  bloc: ^8.1.2
   cupertino_icons:
   equatable: ^2.0.5
   flutter:
